@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nav Link Indicator on Hover</title>
+</head>
+<body>
+    <div class="container">
+        <div class="indicator"></div>
+        <div class="nav_links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Work</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="right_links">
+            <a href="#">Sign Up</a>
+            <a href="#">Log In</a>
+            <a href="#">Other</a>
+        </div>
+    </div>
+
+    <script>
+        const indicator = document.querySelector('.indicator');
+        const links = document.querySelectorAll('.container a');
+
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                indicator.style.width = `${link.offsetWidth}px`;
+                indicator.style.height = `${link.offsetHeight}px`;
+                indicator.style.left = `${link.offsetLeft}px`;
+            })
+        })
+    </script>
+</body>
+</html>
